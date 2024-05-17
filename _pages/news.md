@@ -5,3 +5,5 @@ permalink: /news/
 ---
 
 {% include news.liquid %}
+
+<!-- Keep this hidden -->
