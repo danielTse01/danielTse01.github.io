@@ -9,9 +9,8 @@ profile:
   image: prof_pic.jpg
   image_circular: true # crops the image to make it circular
   more_info: #>
-    <p>Phone: 803-979-1529</p>
-    <p>Email: danieltse321@gmail.com</p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/daniel-tse-8685321a4/">Link</a></p>
+    "<p>Phone: 803-979-1529</p>
+    <p>Email: danieltse321@gmail.com</p>"
 
 
 news: false # includes a list of news items
@@ -19,7 +18,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 ---
 
-Hello, my name is Daniel Tse. I am a recent graduate from the University of North Carolina at Chapel Hill, where I earned a Bachelor of Science in Statistics and Analytics, graduating with honors distinction. During my academic journey, I honed my skills in data science and analytics, specializing in the use of R Studio to clean, interpret, and visualize complex data sets.
+Hello, my name is Daniel Tse. I am a recent graduate from the University of North Carolina at Chapel Hill, where I earned a Bachelor of Science in Statistics and Analytics, graduating with honors distinction. During my academic journey, I honed my skills in data science and analytics, specializing in the use of R Studio to clean, interpret, and visualize complex data sets. Here is a link to my [LinkedIn](https://www.linkedin.com/in/daniel-tse-8685321a4)!
 
 Beyond my academic achievements, I demonstrated exceptional leadership and communication skills through my role in a music non-profit organization called [Musical Empowerment](https://musical-empowerment.org) during my college years. During my leadship role here, I gained a larger perspective in my own town, where I learned the greatest impact I can create are on the ones closest my community.
 
