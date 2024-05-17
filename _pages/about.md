@@ -9,9 +9,9 @@ profile:
   image: prof_pic.jpg
   image_circular: true # crops the image to make it circular
   more_info: #>
-    "<p>Reach me here!</p>
-    <p>803-979-1529</p>
-    <p>danieltse321@gmail.com</p>"
+    "<p>Reach me here...</p>
+    <p>Ph: 803-979-1529</p>
+    <p>Em: danieltse321@gmail.com</p>"
 
 
 news: false # includes a list of news items
