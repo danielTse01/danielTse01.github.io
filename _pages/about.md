@@ -9,8 +9,10 @@ profile:
   image: prof_pic.jpg
   image_circular: true # crops the image to make it circular
   more_info: #>
-    <p>803-979-1529</p>
-    <p>danieltse321@gmail.com</p>
+    <p>Phone: 803-979-1529</p>
+    <p>Email: danieltse321@gmail.com</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/daniel-tse-8685321a4/">Link</a></p>
+
 
 news: false # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
