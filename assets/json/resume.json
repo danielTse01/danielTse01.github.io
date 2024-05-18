@@ -21,25 +21,50 @@
   "education": [
     {
       "institution": "University of North Carolina at Chapel Hill",
-      "location": "Chapel Hill, US",
-      "url": "https://www.unc.edu/",
+      "location": "Chapel Hill",
       "area": "Statistics and Analytics",
       "studyType": "Bachelor of Science",
-      "startDate": "August 2020",
-      "endDate": "May 2024",
+      "startDate": "2020",
+      "endDate": "2024",
       "score": "10",
       "courses": ["Methods of Data Analysis", "Mathematical Statistics", "Decision Analytics", "Sports Analytics", "Numerical Analysis"]
     }
   ],
+  "projects": [
+    {
+      "name": "Quantum Computing",
+      "summary": "Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.",
+      "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
+      "startDate": "2018-01-01",
+      "endDate": "2018-01-01",
+      "url": "https://example.com"
+    },
+    {
+      "name": "Quantum Computing",
+      "summary": "Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.",
+      "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
+      "startDate": "2018-01-01",
+      "endDate": "2018-01-01",
+      "url": "https://example.com"
+    },
+    {
+      "name": "Quantum Computing",
+      "summary": "Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.",
+      "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
+      "startDate": "2018-01-01",
+      "endDate": "2018-01-01",
+      "url": "https://example.com"
+    }
+  ],
   "work": [
     {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "url": "https://example.com",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": ["Relativity"]
+      "name": "Home Depot, Inc.",
+      "position": "Head Cashier",
+      "startDate": "2022",
+      "endDate": "2023",
+      "summary": "Demonstrated leadership by overseeing and guiding a team of cashiers.",
+      "highlights": ["Assisted in inventory management by tracking sales and coordinating with store owner",
+    "Optimized checkout processes to reduce wait times and enhance experience for customers"]
     }
   ],
   "volunteer": [
@@ -169,16 +194,6 @@
         "Quantum Communication",
         "Quantum Teleportation"
       ]
-    }
-  ],
-  "projects": [
-    {
-      "name": "Quantum Computing",
-      "summary": "Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.",
-      "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
-      "startDate": "2018-01-01",
-      "endDate": "2018-01-01",
-      "url": "https://example.com"
     }
   ]
 }
