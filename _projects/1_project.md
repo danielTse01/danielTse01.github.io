@@ -5,7 +5,6 @@ description: NC Hackathon 2022
 img: assets/img/dota2_background.jpg
 importance: 3
 category: my work
-related_publications: true
 ---
 
 Dota 2 is an online team-based game where two teams of five players each control unique characters called "heroes" with special abilities. The objective is to destroy the enemy team's main structure, the "Ancient," located in their base, while defending their own. The game is played on a large map with three main paths, or "lanes," where computer-controlled units, called "creeps," regularly spawn and move towards the enemy base. Success requires teamwork, strategy, and quick reflexes, as players must balance attacking, defending, and strengthening their heroes throughout the match.
