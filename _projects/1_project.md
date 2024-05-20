@@ -27,34 +27,35 @@ In Dota 2, drafting is the process where teams take turns selecting their heroes
 
 My program relies on webscraping the information provided by [DotaBuff](https://www.dotabuff.com/) on the winrates of every hero, and as well as using the official Dota 2 API called [OpenDota](https://docs.opendota.com/).
 
+The Dota 2 Draft Picker program calculates summation of the winrate advantage of every single "hero" against an inputted list of "heros".
+
+
+For example, let's say the opposing team has drafted the two heroes [Medusa](https://www.dota2.com/hero/medusa) and [Templar Assasin](https://www.dota2.com/hero/templarassassin) so far, and we pick a "hero" that can is very strong against these two. Below is are images from DotaBuff that shows best counters to these two heroes individually.
+
+
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/dota2_medusa.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/dota2_templar.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+    Dotabuff has all the "Disadvantage" percentages calculated for every hero in the game when viewing a specified hero.
 </div>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
 
-{% raw %}
+In the images above, I have highlighted a hero named [Dark Seer](https://www.dota2.com/hero/darkseer), that seems to counter both Medusa and Templar Assassin. The way to read the "Disadvantage" percent to subtract 50% - (disadvantage percent). For exampple with Medusa, the disadvantage percent is 7.30%, meaning that Medusa has a 42.7% chance to win against dark seer in a Dota game. Average winrate in Dota should be exactly 50%, meaning 42.7% is poor chance that Medusa will win this hypothetical game.
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+
+Going back to what was said previously, if the opposing team has drafted Medusa and Templar Assassin, it seems Dark Seer is a very strong pick against these two. By adding the disadvantage percents of Dark Seer against Medusa and Templar Assassin, we get a score of 7.3 + 4.99 = 12.29. The Dota 2 Draft Picker does this calculation for every hero in the game against these two, and the output will show the highest scores.
+
+
+This program is able to counter opposing drafts at all stages of the picking phase, and it even contains a feature that will draft an entire team against an opposing draft.
+
+
+To run and test this program, click on this Replit Link to take you to the [Dota 2 Draft Picker](https://replit.com/@schquid98/Dota-2-Draft-Picker).
+
 
 {% endraw %}
