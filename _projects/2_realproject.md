@@ -6,12 +6,9 @@ img: assets/img/chicago_background.jpg
 importance: 2
 category: my work
 related_publications: true
----
-
-```yml
 toc:
   sidebar: left
-```
+---
 
 ## Introduction
 For most Americans, Chicago is often what people think of when they imagine a “dangerous city”. Chicago is located near the Great Lakes, and its population grew rapidly over the mid-19th century. Although Chicago is a leading city for finance, technology, and trade, it’s also notorious for having one of the highest crime rates in the American Midwest. Chicago’s high violence rate stems from many drug and gang-related operations concentrated in the inner city. However, gangsters and drug dealers are not the sole reason for Chicago’s high crime rate, it is also due to the poor resource distribution that negatively affects the city overall as well.
@@ -137,9 +134,6 @@ We will choose our homicide map to compare to the two other maps since homicide 
     <div class="col-sm-6 mt-3 mt-md-0">
         {% include figure.liquid path="assets/img/FINAL_GIF_POVERTY.gif" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
-</div>
-<div class="caption">
-    Dotabuff has all the "Disadvantage" percentages calculated for every hero in the game when viewing a specified hero.
 </div>
 
 ## CONCLUSION
