@@ -46,16 +46,4 @@ For example, let's say the opposing team has drafted the two heroes [Medusa](htt
 </div>
 
 
-In the images above, I have highlighted a hero named [Dark Seer](https://www.dota2.com/hero/darkseer), that seems to counter both Medusa and Templar Assassin. The way to read the "Disadvantage" percent to subtract 50% - (disadvantage percent). For exampple with Medusa, the disadvantage percent is 7.30%, meaning that Medusa has a 42.7% chance to win against dark seer in a Dota game. Average winrate in Dota should be exactly 50%, meaning 42.7% is poor chance that Medusa will win this hypothetical game.
-
-
-Going back to what was said previously, if the opposing team has drafted Medusa and Templar Assassin, it seems Dark Seer is a very strong pick against these two. By adding the disadvantage percents of Dark Seer against Medusa and Templar Assassin, we get a score of 7.3 + 4.99 = 12.29. The Dota 2 Draft Picker does this calculation for every hero in the game against these two, and the output will show the highest scores.
-
-
-This program is able to counter opposing drafts at all stages of the picking phase, and it even contains a feature that will draft an entire team against an opposing draft.
-
-
-To run and test this program, click on this Replit Link to take you to the [Dota 2 Draft Picker](https://replit.com/@schquid98/Dota-2-Draft-Picker).
-
-
 {% endraw %}
