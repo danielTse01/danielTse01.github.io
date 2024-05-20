@@ -10,4 +10,3 @@ related_publications: true
 
 BLANK
 
-{% endraw %}
