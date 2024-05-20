@@ -26,4 +26,4 @@ Beyond my academic achievements, I demonstrated exceptional leadership and commu
 
 Currently, I am focused on continuously improving myself and am eager to gain insights and advice from others. I am passionate about leveraging my expertise in data science to drive innovation and solve real-world problems, always striving to learn and grow in my professional journey.
 
-If you wish to download a copy of my resume, head over to the "cv" tab on the menu bar, and then click on the PDF icon near the top right. Thank you, and I hope you enjoy your stay.
+If you wish to download a copy of my resume, head over to the "Resume" tab on the menu bar, and then click on the PDF icon near the top right. Thank you, and I hope you enjoy your stay.
