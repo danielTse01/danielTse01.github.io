@@ -71,7 +71,16 @@ One of the data pieces the group had trouble with was incorporating some sort of
 First, using the dataset found in Section 1.2, I filtered to a specific year I wanted to create the variable for. Next, I calculated ESPN’s Player Rating for each player and added it as a new variable called espnRating  in the dataset.
 
 $$
-\text{ESPN Player Rating} = \text{Points} + \text{Rebounds} + 1.4 \times \text{Assists} + \text{Steals} + 1.4 \times \text{Blocks} + \text{Field Goals Made} + 0.25 \times \text{Free Throws Made} - 0.7 \times \text{Turnovers} - 0.8 (\text{Field Goals Attempted} - \text{Field Goals Made}) - 0.8 (\text{Free Throws Attempted} - \text{Free Throws Made})
+\text{ESPN Player Rating} = \text{Points} + \text{Rebounds} + 1.4 \times \text{Assists} + \text{Steals} +
+$$
+$$
+1.4 \times \text{Blocks} + \text{Field Goals Made} + 0.25 \times \text{Free Throws Made} -
+$$
+$$
+0.7 \times \text{Turnovers} - 0.8 (\text{Field Goals Attempted} - \text{Field Goals Made}) - 
+$$
+$$
+0.8 (\text{Free Throws Attempted} - \text{Free Throws Made})
 $$
 
 This lengthy equation does a good job of weighing certain variables more than others and even accounts for mistakes a player makes, such as turnovers.
