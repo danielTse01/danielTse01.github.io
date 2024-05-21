@@ -1,21 +1,21 @@
 ---
 layout: page
-title: submenus
+title: Archive
 nav: true
 nav_order: 5
 dropdown: true
 children:
   - title: "2021"
-    permalink: /publications/
+    permalink: /2021/
   - title: divider
   - title: "2022"
-    permalink: /projects/
+    permalink: /2022/
   - title: divider
   - title: "2023"
-    permalink: /blog/
+    permalink: /2023/
   - title: divider
   - title: "2024"
-    permalink: /blog/
+    permalink: /2024/
 ---
 
 <!-- Keep this hidden -->

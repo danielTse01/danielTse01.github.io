@@ -3,7 +3,7 @@ layout: page
 permalink: /archive/
 title: Archive
 description: Archive for courses I took at UNC Chapel Hill.
-nav: true
+nav: 
 nav_order: 4
 ---
 
