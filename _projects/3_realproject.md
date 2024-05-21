@@ -104,7 +104,9 @@ FG% is multiplied by a factor of 100 in order because regularly its value is bet
 #### Defensive Ability
 Like offensive ability, defensive ability is the ability of a team to hold an opponent from scoring. I calculate the defensive ability of a team below.
 
-
+$$
+\text{Defensive Ability} = \text{Defensive Rebounds} + \text{Steals} + 2 \times \text{Blocks} + \text{Turnovers}
+$$
 
 Blocks do not happen often in games, only around 3-5, so I weighed it twice as much to make it gain more significance. I call this variable defAbility, and I incorporate it into the dataframe in 1.1.
 
