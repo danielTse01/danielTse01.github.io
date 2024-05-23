@@ -279,7 +279,7 @@ jekyll-archives:
     tag: "/blog/tag/:name/"
     category: "/blog/category/:name/"
 
-display_tags: ["graph", "cats"] # these tags will be displayed on the front page of your blog
+display_tags: ["graph", "educational", "fun", "cats"] # these tags will be displayed on the front page of your blog
 display_categories: [] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
