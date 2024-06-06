@@ -22,28 +22,70 @@ The images that make up this dataset comes from [Brain Tumor Classification (MRI
     This is what the screen looks like for a player during the drafting phase. All the icons in the middle represent a unique playable "hero" a person can choose to play.
 </div>
 
-My program relies on webscraping the information provided by [DotaBuff](https://www.dotabuff.com/) on the winrates of every hero, and as well as using the official Dota 2 API called [OpenDota](https://docs.opendota.com/).
+I chose to use 80% of my data for my training set, and the remaining 20% for my testing set. Since image size varies within the dataset, I resized all the images to 180x180 pixels and batch units of 32 for the model.
 
-The Dota 2 Draft Picker program calculates summation of the winrate advantage of every single "hero" against an inputted list of "heros".
+## Data Augmentation and Preventing Overfitting
 
-For example, let's say the opposing team has drafted the two heroes [Medusa](https://www.dota2.com/hero/medusa) and [Templar Assasin](https://www.dota2.com/hero/templarassassin) so far, and we pick a "hero" that can is very strong against these two. Below is are images from DotaBuff that shows best counters to these two heroes individually.
+Before creating the model, I had to augment my data and also prevent future overfitting. Some of the techniques I used to augment the data was flip the image horizontally, change the rotation of the image, zooming in on the image, and finally changing the brightness of the image. Augmenting the image gives our dataset more variety without adding more data, and can help prevent overfitting. 
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-6 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/dota2_medusa.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-6 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/dota2_templar.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+```python
+data_augmentation = keras.Sequential(
+  [
+    layers.RandomFlip("horizontal",
+                      input_shape=(img_height,
+                                  img_width,
+                                  3)),
+    layers.RandomBrightness(0.25),
+    layers.RandomRotation(0.2),
+    layers.RandomZoom(0.2)
+  ]
+)
+```
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/tum2.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
-<div class="caption">
-    Dotabuff has all the "Disadvantage" percentages calculated for every hero in the game when viewing a specified hero.
+
+## Creating the Model
+
+I used the Keras Sequential method to create the model. After the model was created, it showed that the optimal number of epochs for this seed was 40. The accuracy of this model on this specific testing and validation set is 86%, meaning 86 out of 100 images were identified with the right tumor type. 
+
+```python
+model = tf.keras.Sequential([
+    data_augmentation,
+    layers.Rescaling(1./255),
+    layers.Conv2D(16, 3, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(32, 3, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(64, 3, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Dropout(0.5),  # Increased dropout rate
+    layers.Flatten(),
+    layers.Dense(128, activation='relu'),
+    layers.Dense(len(class_names), activation='softmax')
+])
+
+
+model.compile(optimizer='adam',
+              loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+              metrics=['accuracy'])
+```
+
+Below is an image of what the validation vs testing accuracy and loss appear to be. For both graphs, the validation and testing curve both closely follow each other, which means that overfitting does not seem to be a problem, as we have prevented earlier. The graphs also show that as epochs approaches 40, the validation loss hits the minimum.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/tum3.png" title="example image" class="img-fluid rounded z-depth-1" %}
+    </div>
 </div>
 
-In the images above, I have highlighted a hero named [Dark Seer](https://www.dota2.com/hero/darkseer), that seems to counter both Medusa and Templar Assassin. The way to read the "Disadvantage" percent to subtract 50% - (disadvantage percent). For exampple with Medusa, the disadvantage percent is 7.30%, meaning that Medusa has a 42.7% chance to win against dark seer in a Dota game. Average winrate in Dota should be exactly 50%, meaning 42.7% is poor chance that Medusa will win this hypothetical game.
+A confusion matrix is important to understand which tumors are harder to diagnose, but even more importantly, whether we had false positives or false negatives. Given the confusion matrix below, it shows that two hardest tumors to diagnose are meningioma and glioma. Out of the 632 observations in our validation set 12 of them are false positives, and 7 of them are false negatives. This means our model has a 1.9% to classify a brain scan of a healthy person to have a tumor, and a 1.1% to classify a brain scan of a tumor having a person as completely healthy.
 
-Going back to what was said previously, if the opposing team has drafted Medusa and Templar Assassin, it seems Dark Seer is a very strong pick against these two. By adding the disadvantage percents of Dark Seer against Medusa and Templar Assassin, we get a score of 7.3 + 4.99 = 12.29. The Dota 2 Draft Picker does this calculation for every hero in the game against these two, and the output will show the highest scores.
-
-This program is able to counter opposing drafts at all stages of the picking phase, and it even contains a feature that will draft an entire team against an opposing draft.
-
-To run and test this program, click on this Replit Link to take you to the [Dota 2 Draft Picker](https://replit.com/@schquid98/Dota-2-Draft-Picker).
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/tum4.png" title="example image" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
