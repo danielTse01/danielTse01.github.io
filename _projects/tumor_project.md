@@ -18,9 +18,6 @@ The images that make up this dataset comes from [Brain Tumor Classification (MRI
         {% include figure.liquid loading="eager" path="assets/img/tum1.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
-<div class="caption">
-    This is what the screen looks like for a player during the drafting phase. All the icons in the middle represent a unique playable "hero" a person can choose to play.
-</div>
 
 I chose to use 80% of my data for my training set, and the remaining 20% for my testing set. Since image size varies within the dataset, I resized all the images to 180x180 pixels and batch units of 32 for the model.
 
@@ -46,6 +43,9 @@ data_augmentation = keras.Sequential(
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/tum2.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
+</div>
+<div class="caption">
+    This single brain scan is augmented to have different rotatins, size, and even brightness levels.
 </div>
 
 ## Creating the Model
@@ -81,6 +81,9 @@ Below is an image of what the validation vs testing accuracy and loss appear to 
         {% include figure.liquid loading="eager" path="assets/img/tum3.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
+<div class="caption">
+    Our goal is to have the Training Loss and Validation Loss curves to follow close to each other, while they increase in accuracy and decrease in loss as epoch size elevates.
+</div>
 
 A confusion matrix is important to understand which tumors are harder to diagnose, but even more importantly, whether we had false positives or false negatives. Given the confusion matrix below, it shows that two hardest tumors to diagnose are meningioma and glioma. Out of the 632 observations in our validation set 12 of them are false positives, and 7 of them are false negatives. This means our model has a 1.9% to classify a brain scan of a healthy person to have a tumor, and a 1.1% to classify a brain scan of a tumor having a person as completely healthy.
 
@@ -89,3 +92,31 @@ A confusion matrix is important to understand which tumors are harder to diagnos
         {% include figure.liquid loading="eager" path="assets/img/tum4.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
+
+## Results
+
+In this dataset, our model is able to correctly identify 544 brain tumors out of the 632 validation elements, meaning that the model has an 86% accuracy rate. However, its also important to test random data outside the current dataset I used. Using an meningioma tumor image provided by [UCSF](https://www.ucsf.edu/news/2023/11/426541/can-gene-expression-predict-if-brain-tumor-likely-grow-back), I tested the model I created to see if it accurately identified the tumor.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/menin2.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Meningioma tumor found in brain scan.
+</div>
+
+```python
+test_path = "menin2.jpg"
+
+img = tf.keras.utils.load_img(
+    test_path, target_size=(img_height, img_width)
+)
+img_array = tf.keras.utils.img_to_array(img)
+img_array = tf.expand_dims(img_array, 0) # Create a batch
+
+predictions = model.predict(img_array)
+score = tf.nn.softmax(predictions[0])
+```
+
+After running the model on this image, it correctly identified the tumor as a meningioma tumor with 78.89% confidence.
